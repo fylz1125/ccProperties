@@ -2,6 +2,7 @@
 // 微信公众号ID：darkpalm
 // Q群：704391772
 const { ccclass, property } = cc._decorator;
+import Player from "./Player";
 
 let SexyType = cc.Enum({
     未知: 0,
@@ -47,17 +48,10 @@ export default class MainGame extends cc.Component {
     })
     HP = 10;
 
-    // 自定义枚举，下拉框属性，中文显示
-    @property({
-        type: cc.Enum(SexyType),
-        displayName: "性别"
-    })
-    sex = SexyType.未知;
-
     // 声明文本框
     @property({ displayName: "作者" })
     author = "大掌教";
-    
+
     @property({ displayName: "Q群" })
     QQ = "704391772";
 
@@ -67,17 +61,6 @@ export default class MainGame extends cc.Component {
     })
     pos: cc.Vec2 = new cc.Vec2(0);
 
-    // 声明滑动条，不加type就是浮点值
-    @property({
-        type: cc.Integer,
-        min: 0,
-        max: 120,
-        step: 1,
-        slide: true,
-        displayName: "年龄"
-    })
-    age = 32;
-
     // 声明事件回调，类似button的点击事件回调
     @property({
         type: cc.Component.EventHandler,
@@ -85,13 +68,52 @@ export default class MainGame extends cc.Component {
     })
     doubleKill = new cc.Component.EventHandler();
 
+    @property({
+        type: cc.AudioClip,
+        displayName: "背景音乐"
+    })
+    bgm: cc.AudioClip = null;
+
+    @property({
+        type: [cc.AudioClip],
+        displayName: "音效"
+    })
+    effects: cc.AudioClip[] = [];
+
+    // 自定义枚举，下拉框属性，中文显示
+    @property({
+        type: cc.Enum(SexyType),
+        displayName: "性别"
+    })
+    sex = SexyType.未知;
+
+    // 声明滑动条，不加type就是浮点值
+    @property({
+        type: cc.Integer,
+        min: 0,
+        max: 120,
+        step: 1,
+        slide: true,
+        displayName: "年龄",
+        visible() {
+            return this.sex != SexyType.女;
+        }
+    })
+    age = 32;
+
+    @property({
+        displayName: "身高",
+    })
+    stature = 183;
+
+  
+    @property(Player)
+    player: Player = new Player();
+
 
     onLoad() {
-        cc.Rect
-
+        cc.log(this.player.nickName);
     }
-
-
 
     start() {
 

@@ -8,17 +8,19 @@
 - 文本框
 - 滑动条
 - 事件回调
+- 音频剪辑
+- 节点数组
+- 互斥面板
+- 自定义属性
 
-## 未完待续
-- 数组节点
-- 自定义组件
-- 交叉引用
+完整的面板：
+![面板](shot.jpg)
 
-博客地址：https://darkpalm.blog.csdn.net
+详细教程可以看博客地址：https://darkpalm.blog.csdn.net/article/details/90960011
 
 微信公众号ID：darkpalm
 
-扫码关注微信公众号，获取满满干货。
+扫码关注微信公众号，可以获取更多技术文档，官网都没有的文档哦。
 <div align=center>
 <img src="https://img-blog.csdnimg.cn/20190605101043274.png"  />
 </div>
