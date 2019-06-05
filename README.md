@@ -1,7 +1,7 @@
 # TS版属性定义
 扫码关注微信公众号，有更多详细的技术文档，官网都没有的文档哦。
 
-微信公众号ID：darkpalm ，可以搜索关注
+微信公众号ID：darkpalm ，可以搜索关注.
 <div align=center>
 <img src="https://img-blog.csdnimg.cn/20190605101043274.png"  />
 </div>
